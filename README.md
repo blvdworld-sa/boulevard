@@ -1,9 +1,9 @@
-# البوليفارد — Boulevard World (Mexico zone)
+# البوليفارد — Boulevard World (منطقة التجارة الرائجة)
 
 Static mirror of https://maxick.grok.me prepared for GitHub Pages at `/boulevard/`.
 
-- Live (intended): https://blvdworld-sa.github.io/boulevard/
-- Festive Mexican restyle via `festive.css` + `festive.js` override layer (content unchanged).
+- Live: https://blvdworld-sa.github.io/boulevard/
+- Premium BLVD-World-inspired restyle via `festive.css` + `festive.js`, with the Mexico zone renamed to **منطقة التجارة الرائجة** and investment-oriented merchant copy.
 
 ## Publish
 
