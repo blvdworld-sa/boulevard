@@ -1,0 +1,248 @@
+/* Festival Mexicano override — keeps structure, adds joy */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Lalezar&display=swap');
+
+:root {
+  --mx-rosa: #e4007c;
+  --mx-rosa-soft: #ff4fa3;
+  --mx-marigold: #f77f00;
+  --mx-marigold-deep: #e85d04;
+  --mx-turquoise: #00a896;
+  --mx-turquoise-deep: #028090;
+  --mx-lime: #8ac926;
+  --mx-yellow: #ffd60a;
+  --mx-azul: #0077b6;
+  --mx-papel: #fff8e7;
+  --mx-ink: #1a0f0a;
+  --mx-paper: #fffdf6;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Cairo", "Tajawal", system-ui, sans-serif !important;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(228,0,124,0.12), transparent 45%),
+    radial-gradient(ellipse at 90% 10%, rgba(0,168,150,0.12), transparent 40%),
+    radial-gradient(ellipse at 50% 100%, rgba(247,127,0,0.1), transparent 45%),
+    var(--mx-paper) !important;
+  color: var(--mx-ink) !important;
+}
+
+/* Playful Arabic display headings */
+h1, h2, .text-4xl, .text-5xl, .text-3xl.font-semibold {
+  font-family: "Lalezar", "Cairo", sans-serif !important;
+  letter-spacing: 0.01em;
+}
+
+/* Papel picado banner at top */
+.mx-bunting {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+  height: 42px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,248,231,0.95), rgba(255,248,231,0));
+}
+.mx-bunting svg {
+  width: 100%;
+  max-width: 1200px;
+  height: 42px;
+  animation: mx-flutter 3.2s ease-in-out infinite;
+  transform-origin: top center;
+}
+@keyframes mx-flutter {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(3px) rotate(0.4deg); }
+}
+
+/* Offset sticky header under bunting a bit */
+header.sticky { top: 36px !important; }
+
+/* Colorful header / nav */
+header.sticky {
+  border-bottom: 3px solid transparent !important;
+  border-image: linear-gradient(90deg, var(--mx-rosa), var(--mx-marigold), var(--mx-turquoise), var(--mx-lime), var(--mx-yellow), var(--mx-rosa)) 1 !important;
+  background: rgba(255,253,246,0.92) !important;
+  box-shadow: 0 8px 24px rgba(228,0,124,0.08);
+}
+header .text-gold, .latin.text-gold, p.latin.text-xs.text-gold {
+  color: var(--mx-marigold-deep) !important;
+  font-weight: 700;
+}
+nav a {
+  border-radius: 999px !important;
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease !important;
+}
+nav a:hover, nav a:focus-visible {
+  transform: translateY(-2px) scale(1.04);
+  background: color-mix(in srgb, var(--mx-rosa) 14%, transparent) !important;
+  color: var(--mx-rosa) !important;
+  outline: none;
+}
+nav a.text-gold { color: var(--mx-marigold-deep) !important; }
+nav a.text-verde { color: var(--mx-turquoise-deep) !important; }
+
+/* Talavera-like section dividers */
+.mx-talavera-band {
+  height: 18px;
+  margin: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='18' viewBox='0 0 48 18'%3E%3Crect width='48' height='18' fill='%23fff8e7'/%3E%3Ccircle cx='8' cy='9' r='5' fill='none' stroke='%2300a896' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='9' r='5' fill='none' stroke='%23e4007c' stroke-width='1.5'/%3E%3Ccircle cx='40' cy='9' r='5' fill='none' stroke='%23f77f00' stroke-width='1.5'/%3E%3Cpath d='M8 9h16M24 9h16' stroke='%23ffd60a' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 48px 18px;
+  border-block: 2px solid var(--mx-turquoise);
+}
+
+/* Section backgrounds — alternating festive washes */
+main > section:nth-of-type(odd) {
+  background: linear-gradient(180deg, rgba(255,214,10,0.08), transparent 60%);
+  border-radius: 1.25rem;
+}
+main > section:nth-of-type(even) {
+  background: linear-gradient(180deg, rgba(0,168,150,0.07), transparent 60%);
+  border-radius: 1.25rem;
+}
+main > section.border-y {
+  border-color: color-mix(in srgb, var(--mx-rosa) 35%, #ddd) !important;
+}
+
+/* Stat cards / articles */
+article.bg-paper, .bg-paper {
+  background: var(--mx-paper) !important;
+}
+section.border-y article.bg-paper {
+  border-radius: 1rem;
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--mx-turquoise) 40%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+section.border-y article.bg-paper:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+  box-shadow: 0 10px 0 color-mix(in srgb, var(--mx-rosa) 45%, transparent);
+}
+
+/* Buttons — rounded & colorful */
+a.inline-flex.min-h-11, button.inline-flex.min-h-11 {
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease !important;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+}
+a.inline-flex.min-h-11:hover, button.inline-flex.min-h-11:hover,
+a.inline-flex.min-h-11:focus-visible, button.inline-flex.min-h-11:focus-visible {
+  transform: translateY(-3px) scale(1.03);
+  filter: saturate(1.15);
+  outline: 2px solid var(--mx-marigold);
+  outline-offset: 2px;
+}
+a.inline-flex.min-h-11:active, button.inline-flex.min-h-11:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.12);
+}
+.bg-verde {
+  background: linear-gradient(135deg, var(--mx-turquoise), var(--mx-turquoise-deep)) !important;
+  color: #fff !important;
+}
+.bg-gold {
+  background: linear-gradient(135deg, var(--mx-marigold), var(--mx-marigold-deep)) !important;
+  color: #fff !important;
+}
+a.border.border-line, button.border.border-line {
+  border-width: 2px !important;
+  border-color: var(--mx-rosa) !important;
+  background: color-mix(in srgb, var(--mx-rosa) 8%, white) !important;
+  color: var(--mx-rosa) !important;
+}
+
+/* Images — playful frames */
+figure img, article img, .frame img, img.aspect-video {
+  border-radius: 1rem !important;
+  box-shadow:
+    0 0 0 3px var(--mx-yellow),
+    0 0 0 6px var(--mx-rosa),
+    0 12px 28px rgba(0,0,0,0.18) !important;
+  transition: transform 0.25s ease;
+}
+figure:hover img, .frame:hover img {
+  transform: scale(1.02) rotate(-0.4deg);
+}
+
+/* Gold/verde/ink soft tokens */
+.text-verde { color: var(--mx-turquoise-deep) !important; }
+.text-gold { color: var(--mx-marigold-deep) !important; }
+.border-gold { border-color: var(--mx-marigold) !important; }
+.border-s-2.border-gold {
+  border-inline-start-width: 4px !important;
+  border-image: none !important;
+}
+
+/* Confetti canvas */
+#mx-confetti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Fade-in on scroll */
+.mx-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.mx-reveal.mx-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Emoji flourishes next to headings (via JS :: after content on markers) */
+.mx-emoji {
+  display: inline-block;
+  margin-inline: 0.25rem;
+  animation: mx-bounce 1.8s ease-in-out infinite;
+}
+@keyframes mx-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Footer / contact joy */
+#contact, [id="contact"] {
+  background:
+    linear-gradient(135deg, rgba(228,0,124,0.1), rgba(0,168,150,0.1)),
+    var(--mx-papel) !important;
+  border-radius: 1.5rem;
+  padding-block: 1.5rem;
+}
+
+/* Print: strip festivity noise */
+@media print {
+  .mx-bunting, #mx-confetti, .mx-talavera-band, .mx-emoji { display: none !important; }
+  header.sticky { top: 0 !important; box-shadow: none !important; }
+  body { background: white !important; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .mx-bunting svg, .mx-emoji, .mx-reveal, a, button, img {
+    animation: none !important;
+    transition: none !important;
+  }
+  .mx-reveal { opacity: 1; transform: none; }
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .mx-bunting { height: 32px; }
+  .mx-bunting svg { height: 32px; }
+  header.sticky { top: 28px !important; }
+  figure img, article img, .frame img {
+    box-shadow:
+      0 0 0 2px var(--mx-yellow),
+      0 0 0 4px var(--mx-rosa),
+      0 8px 16px rgba(0,0,0,0.15) !important;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "بوليفارد وورلد — المنطقة المكسيكية",
+  "short_name": "البوليفارد",
+  "id": "/boulevard/",
+  "start_url": "/boulevard/",
+  "scope": "/boulevard/",
+  "display": "standalone",
+  "background_color": "#090a0c",
+  "theme_color": "#e4007c",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/boulevard/__grok/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
